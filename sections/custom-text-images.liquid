@@ -1,0 +1,165 @@
+<div class="py-lg-96 pt-64 overflow-hidden">
+  <div class="container px-16">
+    <div class="col-12 col-xl-8 mb-lg-64 mb-48 wow fadeInUp">
+      {% if section.settings.subtitulo != blank %}
+      <p class="p text-purple mb-12 fw-semibold">{{ section.settings.subtitulo}}</p>
+      {% endif %}
+
+      {% if section.settings.titulo != blank %}
+      <h2 class="h2 fw-semibold mb-20 wow fadeInUp">{{ section.settings.titulo}}</h2>
+      {% endif %}
+
+      {% if section.settings.descripcion != blank %}
+      <p class="p-large text-gray wow fadeInUp">{{ section.settings.descripcion}}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row px-lg-16">
+      <div class="col-12 col-xl-6 px-16">
+        {% for block in section.blocks %}
+          <div class="d-flex align-items-start gap-12 mb-lg-48 mb-40">
+            <img
+              src="{{ block.settings.icono | img_url: '64x64' }}"
+              alt="{{ block.settings.titulo_bloque }}"
+              class="wow fadeInUp">
+            <div class="">
+              {% if block.settings.titulo_bloque != blank %}
+              <h3 class="p-large fw-semibold mb-lg-8 mb-4 wow fadeInUp">{{ block.settings.titulo_bloque }}</h3>
+              {% endif %}
+
+              {% if block.settings.descripcion_bloque != blank %}
+              <div class="p mb-lg-20 mb-16 text-gray wow fadeInUp">{{ block.settings.descripcion_bloque }}</div>
+              {% endif %}
+              
+              {% if block.settings.url_cta != blank and block.settings.texto_cta != blank %}
+                <a href="{{ block.settings.url_cta }}" class="fw-semibold wow fadeInUp">{{ block.settings.texto_cta }}</a>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="col-12 col-lg-6 pl-lg-48 position-relative px-0">
+        <div class="d-none d-xl-block w-100 h-100 bg-primary-900">
+          {% if section.settings.imagen_tres != blank %}
+            <img
+              src="{{ section.settings.imagen_tres | img_url: 'master' }}"
+              alt="{{ section.settings.titulo }}"
+              class="textoImgUno w-auto position-absolute z-2 wow fadeInUp" data-wow-delay="1.2s">
+          {% endif %}
+          {% if section.settings.imagen_dos != blank %}
+            <img
+              src="{{ section.settings.imagen_dos | img_url: 'master' }}"
+              alt="{{ section.settings.titulo }}"
+              class="textoImgDos w-auto position-absolute z-1 wow fadeInUp" data-wow-delay="1.4s">
+          {% endif %}
+          {% if section.settings.imagen_uno != blank %}
+            <img
+              src="{{ section.settings.imagen_uno | img_url: 'master' }}"
+              alt="{{ section.settings.titulo }}"
+              class="textoImgTres w-auto position-absolute z-0 wow fadeInUp" data-wow-delay="1.6s">
+          {% endif %}
+        </div>
+        {% if section.settings.imagen_mobiles != blank %}
+          <img
+            src="{{ section.settings.imagen_mobiles | img_url: 'master' }}"
+            alt="{{ section.settings.titulo }}"
+            class="d-flex d-xl-none w-100 position-lg-absolute z-0">
+        {% endif %}
+          
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Sección con bloques",
+    "tag": "section",
+    "class": "customTextImage",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitulo",
+        "label": "Subtítulo"
+      },
+      {
+        "type": "text",
+        "id": "titulo",
+        "label": "Título"
+      },
+      {
+        "type": "richtext",
+        "id": "descripcion",
+        "label": "Descripción"
+      },
+      {
+        "type": "image_picker",
+        "id": "imagen_uno",
+        "label": "Primera imagen"
+      }, {
+        "type": "image_picker",
+        "id": "imagen_dos",
+        "label": "Segunda imagen"
+      }, {
+        "type": "image_picker",
+        "id": "imagen_tres",
+        "label": "Tercera imagen"
+      },
+      {
+        "type": "image_picker",
+        "id": "imagen_mobiles",
+        "label": "Tarjetas mobile"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "texto",
+        "name": "Bloque de texto",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icono",
+            "label": "Icono"
+          },
+          {
+            "type": "text",
+            "id": "titulo_bloque",
+            "label": "Título del bloque"
+          },
+          {
+            "type": "richtext",
+            "id": "descripcion_bloque",
+            "label": "Descripción del bloque"
+          },
+          {
+            "type": "url",
+            "id": "url_cta",
+            "label": "Enlace CTA"
+          }, {
+            "type": "text",
+            "id": "texto_cta",
+            "label": "Texto del CTA"
+          }
+        ],
+        "limit": 3
+      }
+    ],
+    "presets": [
+      {
+        "name": "Sección con bloques",
+        "category": "Personalizado",
+        "blocks": [
+          {
+            "type": "texto"
+          }, {
+            "type": "texto"
+          }, {
+            "type": "texto"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

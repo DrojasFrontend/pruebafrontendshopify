@@ -1,0 +1,106 @@
+<div class="position-relative pt-lg-96 pt-64 bg-primary-900">
+  {% render 'custom-responsive-image'
+  , image: section.settings.imagen_fondo_desktop
+  , alt: section.settings.imagen_fondo_desktop.alt
+  , class: 'position-absolute end-0 bottom-0 w-auto z-0 d-lg-block d-none'
+  , title: section.settings.imagen_fondo_desktop.alt %}
+
+  <div class="px-16">
+    <div class="container position-relative px-0 z-1 mb-64 pt-96">
+      <div class="col-12 col-lg-7 m-auto text-lg-center">
+        <p class="p text-white mb-12 fw-semibold wow fadeInUp" data-wow-delay="1s">{{ section.settings.subtitulo }}</p>
+        <h1 class="h1 text-white fw-semibold mb-lg-24 mb-16 wow fadeInUp" data-wow-delay="1.2s">{{ section.settings.titulo }}</h1>
+        <div class="p-large text-white fw-regular mb-lg-48 mb-32 wow fadeInUp" data-wow-delay="1.3s">{{ section.settings.descripcion }}</div>
+        <div class="d-flex flex-column-reverse flex-lg-row gap-3 justify-content-center gap-12">
+          <a href="{{ section.settings.url_cta_demo }}" class="btn btn-white wow fadeInUp" data-wow-delay="1.4s">{{ section.settings.texto_cta_demo }}</a>
+          <a href="{{ section.settings.url_cta_signup }}" class="btn btn-primary wow fadeInUp" data-wow-delay="1.5s">{{ section.settings.texto_cta_signup }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="d-flex justify-content-center position-relative">
+      {% render 'custom-responsive-image'
+        , image: section.settings.imagen_uno
+        , alt: section.settings.imagen_uno.alt
+        , class: 'd-none d-lg-block imgUno w-auto wow fadeInUp'
+        , title: section.settings.imagen_uno.alt %}
+      {% render 'custom-responsive-image'
+        , image: section.settings.imagen_dos
+        , alt: section.settings.imagen_dos.alt
+        , class: 'd-none d-lg-block imgDos w-auto wow fadeInUp'
+        , title: section.settings.imagen_dos.alt %}
+    </div>
+  </div>
+  {% render 'custom-responsive-image'
+    , image: section.settings.imagen_fondo_mobile
+    , alt: section.settings.imagen_fondo_mobile.alt
+    , class: 'd-lg-none w-100'
+    , title: section.settings.imagen_fondo_mobile.alt %}
+</div>
+{% schema %}
+  {
+    "name": "Seccion Hero",
+    "tag": "section",
+    "class": "customHero",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitulo",
+        "label": "Subtítulo"
+      },
+      {
+        "type": "text",
+        "id": "titulo",
+        "label": "Título"
+      },
+      {
+        "type": "richtext",
+        "id": "descripcion",
+        "label": "Descripción"
+      },
+      {
+        "type": "image_picker",
+        "id": "imagen_fondo_desktop",
+        "label": "Imagen de fondo (Desktop)"
+      }, {
+        "type": "image_picker",
+        "id": "imagen_fondo_mobile",
+        "label": "Imagen de fondo (Mobile)"
+      }, {
+        "type": "image_picker",
+        "id": "imagen_uno",
+        "label": "Primera imagen"
+      }, {
+        "type": "image_picker",
+        "id": "imagen_dos",
+        "label": "Segunda imagen"
+      }, {
+        "type": "header",
+        "content": "Botones CTA"
+      }, {
+        "type": "text",
+        "id": "texto_cta_demo",
+        "label": "Texto para CTA Demo"
+      }, {
+        "type": "url",
+        "id": "url_cta_demo",
+        "label": "URL para CTA Demo"
+      }, {
+        "type": "text",
+        "id": "texto_cta_signup",
+        "label": "Texto para CTA Sign Up"
+      }, {
+        "type": "url",
+        "id": "url_cta_signup",
+        "label": "URL para CTA Sign Up"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Seccion Hero",
+        "category": "Personalizado"
+      }
+    ]
+  }
+{% endschema %}

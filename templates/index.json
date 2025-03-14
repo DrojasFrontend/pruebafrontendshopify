@@ -1,61 +1,31 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "button"
-      ],
-      "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
+        "collection": "all",
+        "products_to_show": 8,
         "title": "Featured products",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -63,13 +33,80 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
+      }
+    },
+    "custom_hero_KGrgXq": {
+      "type": "custom-hero",
+      "settings": {
+        "subtitulo": "Super. Simple. Banking.",
+        "titulo": "Simple banking that works like magic.",
+        "descripcion": "<p>Simple, transparent banking. No hidden fees and free overdrafts.</p>",
+        "imagen_fondo_desktop": "shopify://shop_images/light-accent-desktop_0636a0d6-9a48-45e9-b85e-aa6315b5976b.webp",
+        "imagen_fondo_mobile": "shopify://shop_images/card-mobile.webp",
+        "imagen_uno": "shopify://shop_images/card-1_6fb727c5-5b66-431e-a175-2de392d455f8.webp",
+        "imagen_dos": "shopify://shop_images/card-2_55d14859-7dd6-4912-a577-ec4e9ae46a9e.webp",
+        "texto_cta_demo": "Demo",
+        "url_cta_demo": "#",
+        "texto_cta_signup": "Sign up",
+        "url_cta_signup": "#"
+      }
+    },
+    "custom_text_images_zEG3jT": {
+      "type": "custom-text-images",
+      "blocks": {
+        "texto_JaAc34": {
+          "type": "texto",
+          "settings": {
+            "icono": "shopify://shop_images/unlimited-card.svg",
+            "titulo_bloque": "{{ metaobjects.unlimited_cards[\"unlimited-cards\"].unlimited_cards.value }}",
+            "descripcion_bloque": "<p>Give your team the autonomy they need with access to as many cards as they need. Authorise purchases with a click. Simple.</p>",
+            "url_cta": "#",
+            "texto_cta": "Learn more"
+          }
+        },
+        "texto_dhMcA3": {
+          "type": "texto",
+          "settings": {
+            "icono": "shopify://shop_images/easy.svg",
+            "titulo_bloque": "Easy expense policies",
+            "descripcion_bloque": "<p>Every card comes with configurable spending limits, purchase restrictions, and cancellations for each employee and team.</p>",
+            "url_cta": "#",
+            "texto_cta": "Learn more"
+          }
+        },
+        "texto_pbc9xQ": {
+          "type": "texto",
+          "settings": {
+            "icono": "shopify://shop_images/advanced.svg",
+            "titulo_bloque": "Advanced analytics",
+            "descripcion_bloque": "<p>An all-in-one platform that helps you balance everything your team need to be happy and your finances in order.</p>",
+            "url_cta": "#",
+            "texto_cta": "Learn more"
+          }
+        }
+      },
+      "block_order": [
+        "texto_JaAc34",
+        "texto_dhMcA3",
+        "texto_pbc9xQ"
+      ],
+      "settings": {
+        "subtitulo": "Features",
+        "titulo": "The only card you’ll ever need. Simple.",
+        "descripcion": "<p>Spend smarter, lower your bills, get cashback on everything you buy, and unlock credit to grow your business.</p>",
+        "imagen_uno": "shopify://shop_images/seccion-texto-imagen-1.webp",
+        "imagen_dos": "shopify://shop_images/seccion-texto-imagen-2.webp",
+        "imagen_tres": "shopify://shop_images/seccion-texto-imagen-3.webp",
+        "imagen_mobiles": "shopify://shop_images/cards-mobile.webp"
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "custom_hero_KGrgXq",
+    "custom_text_images_zEG3jT"
   ]
 }
